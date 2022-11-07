@@ -1,69 +1,112 @@
 import React from "react";
-import image from "../../assets/Update.jpeg";
+import image from "../../assets/back.jpg";
 const Updates = () => {
   return (
-    <div>
-      <div className="relative flex flex-col-reverse px-4 py-16 mx-auto lg:block lg:flex-col lg:py-32 xl:py-48 md:px-8 sm:max-w-xl md:max-w-full">
-        <div className="z-0 flex justify-center h-full -mx-4 overflow-hidden lg:pt-24 lg:pb-16 lg:pr-8 xl:pr-0 lg:w-1/2 lg:absolute lg:justify-end lg:bottom-0 lg:left-0 lg:items-center">
-          <img
-            src={image}
-            className="object-cover object-right w-full h-auto lg:w-auto lg:h-full"
-            alt=""
-          />
-        </div>
-        <div className="relative flex justify-end max-w-xl mx-auto xl:pr-32 lg:max-w-screen-xl">
-          <div className="mb-16 lg:pr-5 lg:max-w-lg lg:mb-0">
-            <div className="max-w-xl mb-6">
-              <div>
-                <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
-                  Brand new
+    <div className="">
+      <div className="relative text-start">
+        <img
+          src={image}
+          className="absolute inset-0 object-cover w-full h-full"
+          alt=""
+        />
+        <div className="relative bg-gray-900 bg-opacity-75">
+          <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+            <div className="flex flex-col items-center justify-between xl:flex-row">
+              <div className="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12">
+                <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
+                  The quick, brown fox <br className="hidden md:block" />
+                  jumps over a{" "}
+                  <span className="text-teal-accent-400">lazy dog</span>
+                </h2>
+                <p className="max-w-xl mb-4 text-base text-gray-400 md:text-lg">
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                  accusantium doloremque laudan, totam rem aperiam, eaque ipsa
+                  quae.
                 </p>
-              </div>
-              <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
-                We will bring your
-                <br className="hidden md:block" />
-                business{" "}
-                <span className="inline-block text-deep-purple-accent-400">
-                  online
-                </span>
-              </h2>
-              <p className="text-base text-gray-700 md:text-lg">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                quae. explicabo.
-              </p>
-            </div>
-            <form>
-              <div className="flex flex-col md:flex-row">
-                <input
-                  placeholder="Name"
-                  required=""
-                  type="text"
-                  className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none md:mr-2 focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
-                />
-                <input
-                  placeholder="Email"
-                  required=""
-                  type="text"
-                  className="flex-grow w-full h-12 px-4 mb-3 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none md:mb-0 focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
-                />
-              </div>
-              <div className="flex items-center mt-4">
-                <button
-                  type="submit"
-                  className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                >
-                  Subscribe
-                </button>
                 <a
                   href="/"
                   aria-label=""
-                  className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
+                  className="inline-flex items-center font-semibold tracking-wider transition-colors duration-200 text-teal-accent-400 hover:text-teal-accent-700"
                 >
                   Learn more
+                  <svg
+                    className="inline-block w-3 ml-2"
+                    fill="currentColor"
+                    viewBox="0 0 12 12"
+                  >
+                    <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z" />
+                  </svg>
                 </a>
               </div>
-            </form>
+              <div className="w-full max-w-xl xl:px-8 xl:w-5/12">
+                <div className="bg-white rounded shadow-2xl p-7 sm:p-10">
+                  <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
+                    Sign up for updates
+                  </h3>
+                  <form>
+                    <div className="mb-1 sm:mb-2">
+                      <label
+                        htmlFor="firstName"
+                        className="inline-block mb-1 font-medium"
+                      >
+                        First name
+                      </label>
+                      <input
+                        placeholder="John"
+                        required
+                        type="text"
+                        className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
+                        id="firstName"
+                        name="firstName"
+                      />
+                    </div>
+                    <div className="mb-1 sm:mb-2">
+                      <label
+                        htmlFor="lastName"
+                        className="inline-block mb-1 font-medium"
+                      >
+                        Last name
+                      </label>
+                      <input
+                        placeholder="Doe"
+                        required
+                        type="text"
+                        className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
+                        id="lastName"
+                        name="lastName"
+                      />
+                    </div>
+                    <div className="mb-1 sm:mb-2">
+                      <label
+                        htmlFor="email"
+                        className="inline-block mb-1 font-medium"
+                      >
+                        E-mail
+                      </label>
+                      <input
+                        placeholder="john.doe@example.org"
+                        required
+                        type="text"
+                        className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
+                        id="email"
+                        name="email"
+                      />
+                    </div>
+                    <div className="mt-4 mb-2 sm:mb-4">
+                      <button
+                        type="submit"
+                        className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                      >
+                        Subscribe
+                      </button>
+                    </div>
+                    <p className="text-xs text-gray-600 sm:text-sm">
+                      We respect your privacy. Unsubscribe at any time.
+                    </p>
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
