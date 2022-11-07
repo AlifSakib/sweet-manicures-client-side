@@ -4,9 +4,9 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <div>
-      <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 font-poppins">
-        <div className="relative flex items-center justify-between">
-          <div className="flex items-center">
+      <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 font-poppins ">
+        <div className="relative flex items-center justify-between ">
+          <div className="flex items-center ">
             <a
               href="/"
               aria-label="Company"
@@ -29,7 +29,7 @@ const Navbar = () => {
               </svg>
 
               <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                D'lux
+                Sweet Pedicures
               </span>
             </a>
             <ul className="flex items-center hidden space-x-8 lg:flex">
@@ -97,7 +97,7 @@ const Navbar = () => {
               </a>
             </li>
           </ul>
-          <div className="lg:hidden">
+          <div className="lg:hidden z-2">
             <button
               aria-label="Open Menu"
               title="Open Menu"
@@ -120,10 +120,10 @@ const Navbar = () => {
               </svg>
             </button>
             {isMenuOpen && (
-              <div className="absolute top-0 left-0 w-full">
-                <div className="p-5 bg-white border rounded shadow-sm">
-                  <div className="flex items-center justify-between mb-4">
-                    <div>
+              <div className="absolute top-0 left-0 w-full z-10">
+                <div className="p-5 bg-white border rounded shadow-sm ">
+                  <div className="flex items-center justify-between mb-4 ">
+                    <div className="z-1">
                       <a
                         href="/"
                         aria-label="Company"
