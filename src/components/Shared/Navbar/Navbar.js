@@ -59,16 +59,30 @@ const Navbar = () => {
                   Services
                 </Link>
               </li>
-              <li>
-                <a
-                  href="/"
-                  aria-label="Product pricing"
-                  title="Product pricing"
-                  className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                >
-                  Pricing
-                </a>
-              </li>
+              {user && (
+                <>
+                  <li>
+                    <Link
+                      to="/myreviews"
+                      aria-label="Product pricing"
+                      title="Product pricing"
+                      className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                    >
+                      My Reviews
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/addservices"
+                      aria-label="Product pricing"
+                      title="Product pricing"
+                      className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                    >
+                      Add Services
+                    </Link>
+                  </li>
+                </>
+              )}
               <li>
                 <a
                   href="/"
