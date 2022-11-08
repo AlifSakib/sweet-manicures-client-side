@@ -5,19 +5,23 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider";
 
 const Register = () => {
-  const { create, googleSignIn } = useContext(AuthContext);
+  const { create, googleSignIn, update } = useContext(AuthContext);
   const navigate = useNavigate();
   const provider = new GoogleAuthProvider();
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const form = e.target;
+    const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
+    const photo = form.image.value;
 
     create(email, password)
       .then((result) => {
         const user = result.user;
+        update({ displayName: name, photoURL: photo });
+        console.log(user);
         toast.success("Signup Success");
         navigate("/");
         form.reset();
@@ -69,6 +73,19 @@ const Register = () => {
             <input
               type="email"
               name="email"
+              className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+            />
+          </div>
+          <div className="mt-4">
+            <label
+              htmlFor="username"
+              className="block text-sm text-gray-800 dark:text-gray-200 text-start"
+            >
+              Image
+            </label>
+            <input
+              type="text"
+              name="image"
               className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
             />
           </div>

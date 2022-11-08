@@ -8,7 +8,7 @@ const SignleService = ({ service }) => {
     <div>
       <div
         aria-label="View Item"
-        className="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2"
+        className="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2 h-full"
       >
         <div className="flex flex-col h-full">
           <PhotoProvider
