@@ -19,6 +19,7 @@ const Login = () => {
 
     login(email, password)
       .then((result) => {
+        const user = result.user;
         toast.success("Login Success");
         navigate(from, { replace: true });
       })
@@ -30,6 +31,7 @@ const Login = () => {
   const handleSocialLogin = () => {
     googleSignIn(provider)
       .then((result) => {
+        const user = result.user;
         toast.success("Login Success");
         navigate("/");
       })

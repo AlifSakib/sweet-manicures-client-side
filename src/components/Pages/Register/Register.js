@@ -17,6 +17,7 @@ const Register = () => {
 
     create(email, password)
       .then((result) => {
+        const user = result.user;
         toast.success("Signup Success");
         navigate("/");
         form.reset();
@@ -29,6 +30,7 @@ const Register = () => {
   const handleSocialLogin = () => {
     googleSignIn(provider)
       .then((result) => {
+        const user = result.user;
         toast.success("Signup Success");
         navigate("/");
       })

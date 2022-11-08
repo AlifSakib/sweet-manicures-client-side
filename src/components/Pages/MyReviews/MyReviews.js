@@ -7,6 +7,21 @@ const MyReviews = () => {
   const { user } = useContext(AuthContext);
   const [myReviews, setMyReviews] = useState([]);
 
+  const handleDelete = (myReview) => {
+    fetch(`http://localhost:5000/reviews/${myReview._id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          toast.success("Deleted");
+          const remaining = myReviews.filter(
+            (review) => review._id !== myReview._id
+          );
+          setMyReviews(remaining);
+        }
+      });
+  };
   useEffect(() => {
     fetch(`http://localhost:5000/reviews?email=${user?.email}`)
       .then((res) => res.json())
@@ -14,24 +29,6 @@ const MyReviews = () => {
         setMyReviews(data.data);
       });
   }, [user?.email]);
-
-  const handleDelete = (myReview) => {
-    fetch(`http://localhost:5000/reviews/${myReview._id}`, {
-      method: "DELETE",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(myReview),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.success) {
-          toast.success("Deleted");
-          const deletedData = data.data;
-          console.log(deletedData);
-        }
-      });
-  };
 
   return (
     <div>

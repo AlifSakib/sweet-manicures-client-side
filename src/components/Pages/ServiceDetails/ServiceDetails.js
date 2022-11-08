@@ -40,6 +40,7 @@ const ServiceDetails = () => {
       .then((data) => {
         if (data.success) {
           toast.success("Review Added Successfullt");
+          window.location.reload(false);
         } else {
           toast.error("Somting Wrong, Please try again");
         }
