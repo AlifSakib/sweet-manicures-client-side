@@ -22,8 +22,24 @@ const Login = () => {
     login(email, password)
       .then((result) => {
         const user = result.user;
+
+        const currentUser = {
+          email: user.email,
+        };
         toast.success("Login Success");
-        navigate(from, { replace: true });
+        fetch("http://localhost:5000/jwt", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(currentUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            const token = data.token;
+            localStorage.setItem("token", token);
+            navigate(from, { replace: true });
+          });
       })
       .catch((error) => {
         toast.error(error.message);

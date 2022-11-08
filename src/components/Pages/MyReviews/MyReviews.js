@@ -6,7 +6,7 @@ import MyReview from "./MyReview";
 import NoReviews from "./NoReviews";
 
 const MyReviews = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   const [myReviews, setMyReviews] = useState([]);
   useTitle("My Reviews");
 
@@ -27,12 +27,16 @@ const MyReviews = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+    fetch(`http://localhost:5000/reviews?email=${user?.email}`, {
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    })
       .then((res) => res.json())
       .then((data) => {
         setMyReviews(data.data);
       });
-  }, [user?.email]);
+  }, [user?.email, logOut]);
 
   return (
     <div>
