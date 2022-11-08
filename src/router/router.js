@@ -72,6 +72,8 @@ export const router = createBrowserRouter([
             <EditReview></EditReview>
           </PrivateRoute>
         ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/review/${params.id}`),
       },
     ],
   },
