@@ -3,11 +3,13 @@ import React, { useContext } from "react";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider";
+import useTitle from "../../../hooks/useTitle";
 
 const Register = () => {
   const { create, googleSignIn, update } = useContext(AuthContext);
   const navigate = useNavigate();
   const provider = new GoogleAuthProvider();
+  useTitle("Register");
   const handleSubmit = (e) => {
     e.preventDefault();
 

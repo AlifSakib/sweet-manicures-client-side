@@ -1,12 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { AuthContext } from "../../../contexts/AuthProvider";
+import useTitle from "../../../hooks/useTitle";
 import MyReview from "./MyReview";
 import NoReviews from "./NoReviews";
 
 const MyReviews = () => {
   const { user } = useContext(AuthContext);
   const [myReviews, setMyReviews] = useState([]);
+  useTitle("My Reviews");
 
   const handleDelete = (myReview) => {
     fetch(`http://localhost:5000/reviews/${myReview._id}`, {

@@ -3,11 +3,13 @@ import React, { useContext } from "react";
 import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider";
+import useTitle from "../../../hooks/useTitle";
 
 const Login = () => {
   const { login, googleSignIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
+  useTitle("Signin");
   const provider = new GoogleAuthProvider();
   const from = location.state?.from?.pathname || "/";
   const handleSubmit = (e) => {

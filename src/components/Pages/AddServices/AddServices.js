@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import useTitle from "../../../hooks/useTitle";
 import AddServiceHeader from "./AddServiceHeader";
 
 const AddServices = () => {
   const [count, setCount] = useState([]);
+  useTitle("Add Services");
   useEffect(() => {
     fetch("http://localhost:5000/services/all")
       .then((res) => res.json())
