@@ -20,8 +20,8 @@ const Login = () => {
         toast.success("Login Success");
         navigate(from, { replace: true });
       })
-      .then((error) => {
-        toast.error(error.name);
+      .catch((error) => {
+        toast.error(error.message);
       });
   };
   return (
