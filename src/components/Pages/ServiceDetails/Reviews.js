@@ -1,19 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../../../contexts/AuthProvider";
 
 const Reviews = ({ review }) => {
-  const { name, email, message, time } = review;
+  const { user } = useContext(AuthContext);
+  const { name, email, message, time, img } = review;
   return (
     <div>
       <div className="lg:pr-10">
-        <a
-          href="/"
-          aria-label="Go Home"
-          title="Logo"
-          className="inline-block mb-5"
-        >
-          <div className="flex items-center justify-center w-12 h-12 rounded-full bg-indigo-50">
+        <div className="overflow-hidden relative w-10 h-10 bg-gray-100 rounded-full dark:bg-gray-600 mb-5">
+          {img ? (
+            <img src={img} alt="" />
+          ) : (
             <svg
-              className="absolute  w-10 h-10 text-gray-400"
+              className="absolute -left-1 w-12 h-12 text-gray-400"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
@@ -24,8 +23,8 @@ const Reviews = ({ review }) => {
                 clipRule="evenodd"
               ></path>
             </svg>
-          </div>
-        </a>
+          )}
+        </div>
         <h5 className="mb-4 text-4xl font-extrabold leading-none">
           <span className="inline-block text-deep-purple-accent-400">
             {name}

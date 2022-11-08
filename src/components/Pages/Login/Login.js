@@ -1,12 +1,14 @@
+import { GoogleAuthProvider } from "firebase/auth";
 import React, { useContext } from "react";
 import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider";
 
 const Login = () => {
-  const { login } = useContext(AuthContext);
+  const { login, googleSignIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
+  const provider = new GoogleAuthProvider();
   const from = location.state?.from?.pathname || "/";
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,6 +24,17 @@ const Login = () => {
       })
       .catch((error) => {
         toast.error(error.message);
+      });
+  };
+
+  const handleSocialLogin = () => {
+    googleSignIn(provider)
+      .then((result) => {
+        toast.success("Login Success");
+        navigate("/");
+      })
+      .catch((error) => {
+        toast.error(error);
       });
   };
   return (
@@ -91,6 +104,7 @@ const Login = () => {
 
         <div className="flex items-center mt-6 -mx-2">
           <button
+            onClick={handleSocialLogin}
             type="button"
             className="flex items-center justify-center w-full px-6 py-2 mx-2 font-semibold tracking-wide text-teal-900 transition duration-200 rounded shadow-md hover:text-deep-purple-900 bg-teal-accent-400 hover:bg-deep-purple-accent-100 focus:shadow-outline focus:outline-none"
           >

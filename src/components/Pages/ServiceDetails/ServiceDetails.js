@@ -26,6 +26,7 @@ const ServiceDetails = () => {
       message: form.message.value,
       service_id,
       title,
+      img: user.photoURL,
       time: new Date().toTimeString(),
     };
     fetch("http://localhost:5000/reviews", {
