@@ -45,8 +45,8 @@ const AddServices = () => {
       <AddServiceHeader></AddServiceHeader>
       <div>
         <section className="text-gray-600 body-font relative text-start">
-          <div className="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
-            <div className="bg-white rounded shadow-2xl p-7 sm:p-10">
+          <div className="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap ">
+            <div className="bg-white rounded shadow-2xl p-7 sm:p-10 ">
               <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
                 Add Review
               </h3>

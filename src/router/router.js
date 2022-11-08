@@ -5,6 +5,7 @@ import AllServices from "../components/Pages/AllServices/AllServices";
 import Blog from "../components/Pages/Blog/Blog";
 import ErrorPage from "../components/Pages/ErrorPage/ErrorPage";
 import Login from "../components/Pages/Login/Login";
+import EditReview from "../components/Pages/MyReviews/EditReview";
 import MyReviews from "../components/Pages/MyReviews/MyReviews";
 import Register from "../components/Pages/Register/Register";
 import ServiceDetails from "../components/Pages/ServiceDetails/ServiceDetails";
@@ -63,6 +64,14 @@ export const router = createBrowserRouter([
       {
         path: "/blogs",
         element: <Blog></Blog>,
+      },
+      {
+        path: "/editreview/:id",
+        element: (
+          <PrivateRoute>
+            <EditReview></EditReview>
+          </PrivateRoute>
+        ),
       },
     ],
   },
