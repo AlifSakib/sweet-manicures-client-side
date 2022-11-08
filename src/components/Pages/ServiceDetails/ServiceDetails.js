@@ -25,6 +25,7 @@ const ServiceDetails = () => {
       email: form.email.value,
       message: form.message.value,
       service_id,
+      title,
       time: new Date().toTimeString(),
     };
     fetch("http://localhost:5000/reviews", {

@@ -7,6 +7,7 @@ import Login from "../components/Pages/Login/Login";
 import MyReviews from "../components/Pages/MyReviews/MyReviews";
 import Register from "../components/Pages/Register/Register";
 import ServiceDetails from "../components/Pages/ServiceDetails/ServiceDetails";
+import AuthProvider from "../contexts/AuthProvider";
 
 import Main from "../layout/Main";
 
@@ -36,7 +37,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/myreviews",
-        element: <MyReviews></MyReviews>,
+        element: (
+          <AuthProvider>
+            <MyReviews></MyReviews>
+          </AuthProvider>
+        ),
       },
       {
         path: "/addservices",
