@@ -1,10 +1,46 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import { useLoaderData } from "react-router-dom";
+import Reviews from "./Reviews";
 
 const ServiceDetails = () => {
   const service = useLoaderData();
-  const { title, img, description, price, _id } = service.data;
-  console.log(service);
+  const { title, img, description, price, _id, service_id } = service.data;
+  const [reviews, setReviews] = useState([]);
+  useEffect(() => {
+    fetch(`http://localhost:5000/reviews/${service_id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setReviews(data.data);
+      });
+  }, [service_id]);
+  const handleSubmitReview = (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const reviewDetails = {
+      name: `${form.firstName.value} ${form.lastName.value}`,
+      email: form.email.value,
+      message: form.message.value,
+      service_id,
+      time: new Date().toTimeString(),
+    };
+    fetch("http://localhost:5000/reviews", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(reviewDetails),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          toast.success("Review Added Successfullt");
+        } else {
+          toast.error("Somting Wrong, Please try again");
+        }
+      });
+  };
   return (
     <div>
       <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20 text-start">
@@ -87,48 +123,132 @@ const ServiceDetails = () => {
       </div>
       {/* Reviews */}
       <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20 text-start">
-        <div className="grid gap-10 lg:grid-cols-2">
-          <div className="lg:pr-10">
-            <a
-              href="/"
-              aria-label="Go Home"
-              title="Logo"
-              className="inline-block mb-5"
-            >
-              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-indigo-50">
-                <svg
-                  className="absolute  w-10 h-10 text-gray-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                    clipRule="evenodd"
-                  ></path>
-                </svg>
-              </div>
-            </a>
-            <h5 className="mb-4 text-4xl font-extrabold leading-none">
-              <span className="inline-block text-deep-purple-accent-400">
-                Alif Sakib
-              </span>
-            </h5>
-            <p className="mb-6 text-gray-900">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel,
-              unde?
-            </p>
+        <div className="flex justify-between flex-col lg:flex-row">
+          <div>
+            {/* <div className="lg:pr-10">
+              <a
+                href="/"
+                aria-label="Go Home"
+                title="Logo"
+                className="inline-block mb-5"
+              >
+                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-indigo-50">
+                  <svg
+                    className="absolute  w-10 h-10 text-gray-400"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                      clipRule="evenodd"
+                    ></path>
+                  </svg>
+                </div>
+              </a>
+              <h5 className="mb-4 text-4xl font-extrabold leading-none">
+                <span className="inline-block text-deep-purple-accent-400">
+                  Alif Sakib
+                </span>
+              </h5>
+              <p className="mb-6 text-gray-900">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel,
+                unde?
+              </p>
 
-            <p className="mb-6 text-gray-900">{new Date().toDateString()}</p>
-            <hr className="mb-5 border-gray-300" />
+              <p className="mb-6 text-gray-900">{new Date().toDateString()}</p>
+              <hr className="mb-5 border-gray-300" />
+            </div> */}
+            {reviews.map((review) => (
+              <Reviews key={review._id} review={review}></Reviews>
+            ))}
           </div>
           <div>
-            <img
-              className="object-cover w-full h-56 rounded shadow-lg sm:h-96"
-              src={img}
-              alt=""
-            />
+            <div className="w-full max-w-xl ">
+              <div className="bg-white rounded shadow-2xl p-7 sm:p-10">
+                <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
+                  Add Review
+                </h3>
+                <form onSubmit={handleSubmitReview}>
+                  <div className="mb-1 sm:mb-2">
+                    <label
+                      htmlFor="firstName"
+                      className="inline-block mb-1 font-medium"
+                    >
+                      First name
+                    </label>
+                    <input
+                      placeholder="John"
+                      required
+                      type="text"
+                      className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
+                      id="firstName"
+                      name="firstName"
+                    />
+                  </div>
+                  <div className="mb-1 sm:mb-2">
+                    <label
+                      htmlFor="lastName"
+                      className="inline-block mb-1 font-medium"
+                    >
+                      Last name
+                    </label>
+                    <input
+                      placeholder="Doe"
+                      required
+                      type="text"
+                      className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
+                      id="lastName"
+                      name="lastName"
+                    />
+                  </div>
+                  <div className="mb-1 sm:mb-2">
+                    <label
+                      htmlFor="email"
+                      className="inline-block mb-1 font-medium"
+                    >
+                      E-mail
+                    </label>
+                    <input
+                      placeholder="john.doe@example.org"
+                      required
+                      type="text"
+                      className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
+                      id="email"
+                      name="email"
+                    />
+                  </div>
+                  <div className="mb-1 sm:mb-2">
+                    <label
+                      htmlFor="email"
+                      className="inline-block mb-1 font-medium"
+                    >
+                      Message
+                    </label>
+                    <textarea
+                      placeholder="Type your text here ."
+                      required
+                      type="text"
+                      className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
+                      id="message"
+                      name="message"
+                    />
+                  </div>
+                  <div className="mt-4 mb-2 sm:mb-4">
+                    <button
+                      type="submit"
+                      className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                    >
+                      Submit
+                    </button>
+                  </div>
+                  <p className="text-xs text-gray-600 sm:text-sm">
+                    Thank you for your valuable review.
+                  </p>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </div>
