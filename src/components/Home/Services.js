@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { PropagateLoader } from "react-spinners";
 import Service from "./Service";
 
 const Services = () => {
-  const [services, setServices] = useState([]);
+  const [services, setServices] = useState(null);
 
   useEffect(() => {
     fetch("http://localhost:5000/services")
@@ -30,11 +31,22 @@ const Services = () => {
             includes consciousness as a totality.
           </p>
         </div>
-        <div className="grid gap-6 row-gap-5 mb-8 lg:grid-cols-4 sm:row-gap-6 sm:grid-cols-2">
+        {/* <div className="grid gap-6 row-gap-5 mb-8 lg:grid-cols-4 sm:row-gap-6 sm:grid-cols-2">
           {services.map((service) => (
             <Service key={service._id} service={service}></Service>
           ))}
-        </div>
+        </div> */}
+        {services ? (
+          <div className="grid gap-6 row-gap-5 mb-8 lg:grid-cols-4 sm:row-gap-6 sm:grid-cols-2">
+            {services.map((service) => (
+              <Service key={service._id} service={service}></Service>
+            ))}
+          </div>
+        ) : (
+          <div className="flex justify-center my-16">
+            <PropagateLoader color="#36d7b7" size={25} />
+          </div>
+        )}
         <div className="text-center">
           <Link
             to="/services"
