@@ -6,12 +6,13 @@ import { AuthContext } from "../../../contexts/AuthProvider";
 import useTitle from "../../../hooks/useTitle";
 
 const Login = () => {
-  const { login, googleSignIn, loading } = useContext(AuthContext);
+  const { login, googleSignIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   useTitle("Signin");
   const provider = new GoogleAuthProvider();
   const from = location.state?.from?.pathname || "/";
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -27,6 +28,7 @@ const Login = () => {
           email: user.email,
         };
         toast.success("Login Success");
+
         fetch("https://sweet-manicures.vercel.app/jwt", {
           method: "POST",
           headers: {
