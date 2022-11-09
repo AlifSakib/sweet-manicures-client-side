@@ -7,7 +7,7 @@ const AddServices = () => {
   const [count, setCount] = useState([]);
   useTitle("Add Services");
   useEffect(() => {
-    fetch("http://localhost:5000/services/all")
+    fetch("https://sweet-manicures.vercel.app/services/all")
       .then((res) => res.json())
       .then((data) => setCount(data.count));
   }, []);
@@ -23,7 +23,7 @@ const AddServices = () => {
       description: form.description.value,
     };
 
-    fetch("http://localhost:5000/services", {
+    fetch("https://sweet-manicures.vercel.app/services", {
       method: "POST",
       headers: {
         "content-type": "application/json",

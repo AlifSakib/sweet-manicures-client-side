@@ -11,7 +11,7 @@ const ServiceDetails = () => {
   const [reviews, setReviews] = useState(null);
   const { user } = useContext(AuthContext);
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews/${service_id}`)
+    fetch(`https://sweet-manicures.vercel.app/reviews/${service_id}`)
       .then((res) => res.json())
       .then((data) => {
         setReviews(data.data);
@@ -30,7 +30,7 @@ const ServiceDetails = () => {
       img: user.photoURL,
       time: new Date().toTimeString(),
     };
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://sweet-manicures.vercel.app/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",

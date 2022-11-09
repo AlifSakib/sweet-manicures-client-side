@@ -13,7 +13,7 @@ const EditReview = () => {
       message: form.message.value,
     };
 
-    fetch(`http://localhost:5000/editReview/${review._id}`, {
+    fetch(`https://sweet-manicures.vercel.app/editReview/${review._id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

@@ -28,7 +28,7 @@ const Login = () => {
         };
         console.log(currentUser);
         toast.success("Login Success");
-        fetch("http://localhost:5000/jwt", {
+        fetch("https://sweet-manicures.vercel.app/jwt", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -56,7 +56,7 @@ const Login = () => {
           email: user.email,
         };
         toast.success("Login Success");
-        fetch("http://localhost:5000/jwt", {
+        fetch("https://sweet-manicures.vercel.app/jwt", {
           method: "POST",
           headers: {
             "content-type": "application/json",
