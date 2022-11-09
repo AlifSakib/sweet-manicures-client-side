@@ -6,7 +6,7 @@ import MyReview from "./MyReview";
 import NoReviews from "./NoReviews";
 
 const MyReviews = () => {
-  const { user, logOut, setLoading } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   const [myReviews, setMyReviews] = useState([]);
   useTitle("My Reviews");
 

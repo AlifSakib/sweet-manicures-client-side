@@ -7,7 +7,7 @@ const AboutMe = () => {
   return (
     <div>
       <section className="text-gray-600 body-font">
-        <div className="container px-5 py-16 mx-auto flex flex-wrap">
+        <div className="container px-5 pb-16 mx-auto flex flex-wrap">
           <div className="lg:w-1/2 w-full mb-10 lg:mb-0 rounded-lg overflow-hidden">
             <PhotoProvider>
               <PhotoView src={aboutImg}>

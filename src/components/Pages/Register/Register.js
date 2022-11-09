@@ -52,12 +52,28 @@ const Register = () => {
     googleSignIn(provider)
       .then((result) => {
         const user = result.user;
+        const currentUser = {
+          email: user.email,
+        };
         toast.success("Signup Success");
-        navigate("/");
+        fetch("http://localhost:5000/jwt", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(currentUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            localStorage.setItem("token", data.token);
+            navigate("/");
+          });
+        // navigate("/");
       })
       .catch((error) => {
-        const errorCode = error.code;
+        // const errorCode = error.code;
         const errorMessage = error.message;
+        toast.error(errorMessage);
       });
   };
   return (
