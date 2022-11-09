@@ -6,7 +6,7 @@ import MyReview from "./MyReview";
 import NoReviews from "./NoReviews";
 
 const MyReviews = () => {
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut, setLoading } = useContext(AuthContext);
   const [myReviews, setMyReviews] = useState([]);
   useTitle("My Reviews");
 
@@ -32,7 +32,12 @@ const MyReviews = () => {
         authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     })
-      .then((res) => res.json())
+      .then((res) => {
+        if (res.status === 401 || res.status === 403) {
+          logOut();
+        }
+        return res.json();
+      })
       .then((data) => {
         setMyReviews(data.data);
       });

@@ -57,7 +57,16 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   //values
-  const value = { user, loading, create, login, logOut, update, googleSignIn };
+  const value = {
+    user,
+    loading,
+    create,
+    login,
+    logOut,
+    update,
+    googleSignIn,
+    setLoading,
+  };
 
   return (
     <div>

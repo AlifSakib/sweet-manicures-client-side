@@ -8,7 +8,6 @@ const Navbar = () => {
   const { logOut, user } = useContext(AuthContext);
   const handleLogout = () => {
     logOut();
-    navigate("/");
   };
   return (
     <div>

@@ -26,6 +26,7 @@ const Login = () => {
         const currentUser = {
           email: user.email,
         };
+        console.log(currentUser);
         toast.success("Login Success");
         fetch("http://localhost:5000/jwt", {
           method: "POST",
@@ -36,8 +37,7 @@ const Login = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            const token = data.token;
-            localStorage.setItem("token", token);
+            localStorage.setItem("token", data.token);
             navigate(from, { replace: true });
           });
       })
