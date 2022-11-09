@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { PacmanLoader } from "react-spinners";
 import useTitle from "../../../hooks/useTitle";
 import ServiceHeader from "./ServiceHeader";
 import SignleService from "./SignleService";
 
 const AllServices = () => {
-  const [services, setServices] = useState([]);
+  const [services, setServices] = useState(null);
   useTitle("Services");
   useEffect(() => {
     fetch("http://localhost:5000/services/all")
@@ -27,14 +28,28 @@ const AllServices = () => {
               <div className="h-1 ml-auto duration-300 origin-left transform bg-deep-purple-accent-400 scale-x-30 group-hover:scale-x-100" />
             </h2>
           </div>
-          <div className="grid gap-6 row-gap-5 mb-8 lg:grid-cols-4 sm:row-gap-6 sm:grid-cols-2">
+          {/* <div className="grid gap-6 row-gap-5 mb-8 lg:grid-cols-4 sm:row-gap-6 sm:grid-cols-2">
             {services.map((service) => (
               <SignleService
                 key={service._id}
                 service={service}
               ></SignleService>
             ))}
-          </div>
+          </div> */}
+          {services ? (
+            <div className="grid gap-6 row-gap-5 mb-8 lg:grid-cols-4 sm:row-gap-6 sm:grid-cols-2">
+              {services.map((service) => (
+                <SignleService
+                  key={service._id}
+                  service={service}
+                ></SignleService>
+              ))}
+            </div>
+          ) : (
+            <div className="felx w-9/12 mx-auto">
+              <PacmanLoader color="rgba(54, 215, 183, 1)" size={40} />
+            </div>
+          )}
           <div className="text-center"></div>
         </div>
       </div>
