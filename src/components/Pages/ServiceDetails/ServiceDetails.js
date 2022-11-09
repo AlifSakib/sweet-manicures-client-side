@@ -138,6 +138,14 @@ const ServiceDetails = () => {
           </div> */}
           {reviews ? (
             <div className="w-1/2">
+              <div>
+                <h5 className="mb-4 text-7xl font-extrabold leading-none">
+                  <span className="inline-block text-deep-purple-accent-400">
+                    Reviews
+                  </span>
+                </h5>
+                <hr className="mb-5 border-gray-300" />
+              </div>
               {reviews.map((review) => (
                 <Reviews key={review._id} review={review}></Reviews>
               ))}

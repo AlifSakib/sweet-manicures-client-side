@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import toast from "react-hot-toast";
 import { useLoaderData, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../../contexts/AuthProvider";
 
 const EditReview = () => {
+  const { user } = useContext(AuthContext);
   const review = useLoaderData();
   const navigate = useNavigate();
   const handleEdit = (e) => {
@@ -83,6 +85,7 @@ const EditReview = () => {
               <input
                 placeholder="john.doe@example.org"
                 className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
+                defaultValue={user.photoURL}
                 id="image"
                 type="text"
                 name="image"
