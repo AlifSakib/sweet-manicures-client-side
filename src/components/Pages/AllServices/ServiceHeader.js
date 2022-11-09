@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ServiceHeader = () => {
   return (
@@ -49,22 +50,22 @@ const ServiceHeader = () => {
                         height="24"
                       />
                     </svg>
-                    <span className="relative">The</span>
+                    <span className="relative">Welcome</span>
                   </span>{" "}
-                  quick, brown fox jumps over a lazy dog
+                  to the beauty haven
                 </h2>
                 <p className="text-base text-indigo-100 md:text-lg">
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                  accusantium doloremque rem aperiam, eaque ipsa quae.
+                  You will get the attention for your body , hair and skin what
+                  you actually deserve.
                 </p>
               </div>
               <div>
-                <a
-                  href="/"
+                <Link
+                  to="#"
                   className="inline-flex items-center justify-center h-12 px-6 font-semibold tracking-wide text-teal-900 transition duration-200 rounded shadow-md hover:text-deep-purple-900 bg-teal-accent-400 hover:bg-deep-purple-accent-100 focus:shadow-outline focus:outline-none"
                 >
                   Get started
-                </a>
+                </Link>
               </div>
             </div>
           </div>

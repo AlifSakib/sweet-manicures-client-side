@@ -36,7 +36,8 @@ const Navbar = () => {
               </svg>
 
               <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                Sweet Manicures
+                <span className="text-pink-accent-200">Sweet</span>{" "}
+                <span className="text-deep-purple-accent-400">Manicures</span>
               </span>
             </Link>
             <ul className="flex items-center hidden space-x-8 lg:flex">

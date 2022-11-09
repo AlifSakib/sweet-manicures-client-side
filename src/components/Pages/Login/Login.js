@@ -81,7 +81,7 @@ const Login = () => {
     <div>
       <div className="w-full max-w-sm p-6 m-auto mx-auto bg-white rounded-md shadow-md dark:bg-gray-800 mb-24 mt-10">
         <h1 className="text-3xl font-semibold text-center text-gray-700 dark:text-white">
-          Sweet Pedicures
+          Signin
         </h1>
 
         <form onSubmit={handleSubmit} className="mt-6">
@@ -160,7 +160,7 @@ const Login = () => {
           {" "}
           Don't have an account?{" "}
           <Link
-            to="/signup"
+            to="/register"
             className="font-medium text-gray-700 dark:text-gray-200 hover:underline"
           >
             Create One

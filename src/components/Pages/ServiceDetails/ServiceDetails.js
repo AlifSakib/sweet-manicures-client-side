@@ -46,6 +46,7 @@ const ServiceDetails = () => {
           toast.error("Somting Wrong, Please try again");
         }
       });
+    form.reset();
   };
   return (
     <div>
