@@ -42,7 +42,9 @@ const Login = () => {
           });
       })
       .catch((error) => {
-        toast.error(error.message);
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        toast.error(errorMessage);
       });
   };
 
@@ -54,7 +56,8 @@ const Login = () => {
         navigate("/");
       })
       .catch((error) => {
-        toast.error(error);
+        const errorCode = error.code;
+        const errorMessage = error.message;
       });
   };
   return (

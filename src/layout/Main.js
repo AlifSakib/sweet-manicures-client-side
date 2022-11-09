@@ -5,10 +5,12 @@ import Navbar from "../components/Shared/Navbar/Navbar";
 
 const Main = () => {
   return (
-    <div className="relative">
+    <div className="flex flex-col" style={{ minHeight: "100vh" }}>
       <Navbar></Navbar>
       <Outlet></Outlet>
-      <Footer></Footer>
+      <div className=" mt-auto">
+        <Footer></Footer>
+      </div>
     </div>
   );
 };

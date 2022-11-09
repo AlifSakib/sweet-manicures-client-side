@@ -22,10 +22,25 @@ const Register = () => {
     create(email, password)
       .then((result) => {
         const user = result.user;
+        const currentUser = {
+          email: user.email,
+        };
         update({ displayName: name, photoURL: photo });
         console.log(user);
         toast.success("Signup Success");
-        navigate("/");
+        fetch("http://localhost:5000/jwt", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(currentUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            localStorage.setItem("token", data.token);
+            navigate("/");
+          });
+
         form.reset();
       })
       .catch((error) => {
@@ -41,7 +56,8 @@ const Register = () => {
         navigate("/");
       })
       .catch((error) => {
-        toast.error(error);
+        const errorCode = error.code;
+        const errorMessage = error.message;
       });
   };
   return (
