@@ -16,7 +16,7 @@ const ServiceDetails = () => {
       .then((data) => {
         setReviews(data.data);
       });
-  }, [service_id]);
+  }, [service_id, reviews]);
   const handleSubmitReview = (e) => {
     e.preventDefault();
 
@@ -41,7 +41,7 @@ const ServiceDetails = () => {
       .then((data) => {
         if (data.success) {
           toast.success("Review Added Successfullt");
-          window.location.reload(false);
+          // window.location.reload(false);
         } else {
           toast.error("Somting Wrong, Please try again");
         }
