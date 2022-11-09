@@ -23,16 +23,14 @@ const Navbar = () => {
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="2"
                 stroke="currentColor"
-                className="w-8 h-8 text-deep-purple-accent-400"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-10 h-10 text-white p-2 bg-deep-purple-accent-400 rounded-full"
+                viewBox="0 0 24 24"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"
-                />
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
               </svg>
 
               <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
@@ -171,22 +169,22 @@ const Navbar = () => {
                         className="inline-flex items-center"
                       >
                         <svg
-                          className="w-8 text-deep-purple-accent-400"
-                          viewBox="0 0 24 24"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeMiterlimit="10"
-                          stroke="currentColor"
+                          xmlns="http://www.w3.org/2000/svg"
                           fill="none"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          class="w-10 h-10 text-white p-2 bg-deep-purple-accent-400 rounded-full"
+                          viewBox="0 0 24 24"
                         >
-                          <rect x="3" y="1" width="7" height="12" />
-                          <rect x="3" y="17" width="7" height="6" />
-                          <rect x="14" y="1" width="7" height="6" />
-                          <rect x="14" y="11" width="7" height="12" />
+                          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
                         </svg>
                         <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                          Sweet Manicures
+                          <span className="text-pink-accent-200">Sweet</span>{" "}
+                          <span className="text-deep-purple-accent-400">
+                            Manicures
+                          </span>
                         </span>
                       </Link>
                     </div>
