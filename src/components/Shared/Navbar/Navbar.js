@@ -41,20 +41,20 @@ const Navbar = () => {
             </Link>
             <ul className="flex items-center hidden space-x-8 lg:flex">
               <li>
-                <a
-                  href="/"
-                  aria-label="Our product"
-                  title="Our product"
+                <Link
+                  to="/"
+                  aria-label="Home"
+                  title="Home"
                   className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                 >
                   Home
-                </a>
+                </Link>
               </li>
               <li>
                 <Link
                   to="/services"
-                  aria-label="Our product"
-                  title="Our product"
+                  aria-label="Services"
+                  title="Services"
                   className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                 >
                   Services
@@ -65,8 +65,8 @@ const Navbar = () => {
                   <li>
                     <Link
                       to="/myreviews"
-                      aria-label="Product pricing"
-                      title="Product pricing"
+                      aria-label="My Reviews"
+                      title="My Reviews"
                       className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                     >
                       My Reviews
@@ -75,8 +75,8 @@ const Navbar = () => {
                   <li>
                     <Link
                       to="/addservices"
-                      aria-label="Product pricing"
-                      title="Product pricing"
+                      aria-label="Add Services"
+                      title="Add Services"
                       className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                     >
                       Add Services
@@ -102,8 +102,8 @@ const Navbar = () => {
                 <button
                   onClick={handleLogout}
                   className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                  aria-label="Sign up"
-                  title="Sign up"
+                  aria-label="Logout"
+                  title="Logout"
                 >
                   Logout
                 </button>
@@ -163,8 +163,8 @@ const Navbar = () => {
                 <div className="p-5 bg-white border rounded shadow-sm ">
                   <div className="flex items-center justify-between mb-4 ">
                     <div className="z-1">
-                      <a
-                        href="/"
+                      <Link
+                        to="/"
                         aria-label="Company"
                         title="Company"
                         className="inline-flex items-center"
@@ -185,9 +185,9 @@ const Navbar = () => {
                           <rect x="14" y="11" width="7" height="12" />
                         </svg>
                         <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                          Company
+                          Sweet Manicures
                         </span>
-                      </a>
+                      </Link>
                     </div>
                     <div>
                       <button
@@ -208,65 +208,96 @@ const Navbar = () => {
                   <nav>
                     <ul className="space-y-4">
                       <li>
-                        <a
-                          href="/"
-                          aria-label="Our product"
-                          title="Our product"
+                        <Link
+                          to="/"
+                          aria-label="Home"
+                          title="Home"
                           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
-                          Product
-                        </a>
+                          Home
+                        </Link>
                       </li>
                       <li>
-                        <a
-                          href="/"
-                          aria-label="Our product"
-                          title="Our product"
+                        <Link
+                          to="/services"
+                          aria-label="Services"
+                          title="Services"
                           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
-                          Features
-                        </a>
+                          Services
+                        </Link>
                       </li>
+                      {user && (
+                        <>
+                          <li>
+                            <Link
+                              to="/myreviews"
+                              aria-label="My Reviews"
+                              title="My Reviews"
+                              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                            >
+                              My Reviews
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              to="/addservices"
+                              aria-label="Add Services"
+                              title="Add Services"
+                              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                            >
+                              Add Services
+                            </Link>
+                          </li>
+                        </>
+                      )}
                       <li>
-                        <a
-                          href="/"
-                          aria-label="Product pricing"
-                          title="Product pricing"
+                        <Link
+                          to="/blogs"
+                          aria-label="Blogs"
+                          title="Blogs"
                           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
-                          Pricing
-                        </a>
+                          Blogs
+                        </Link>
                       </li>
-                      <li>
-                        <a
-                          href="/"
-                          aria-label="About us"
-                          title="About us"
-                          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                        >
-                          About us
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="/"
-                          aria-label="Sign in"
-                          title="Sign in"
-                          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                        >
-                          Sign in
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="/"
-                          className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                          aria-label="Sign up"
-                          title="Sign up"
-                        >
-                          Sign up
-                        </a>
-                      </li>
+                      {user?.email ? (
+                        <ul className="flex items-center hidden space-x-8 lg:flex">
+                          <li>
+                            <button
+                              onClick={handleLogout}
+                              className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                              aria-label="Logout"
+                              title="Logout"
+                            >
+                              Logout
+                            </button>
+                          </li>
+                        </ul>
+                      ) : (
+                        <ul className="space-y-4">
+                          <li>
+                            <Link
+                              to="/login"
+                              aria-label="Sign in"
+                              title="Sign in"
+                              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                            >
+                              Sign in
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              to="/register"
+                              className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                              aria-label="Sign up"
+                              title="Sign up"
+                            >
+                              Sign up
+                            </Link>
+                          </li>
+                        </ul>
+                      )}
                     </ul>
                   </nav>
                 </div>
