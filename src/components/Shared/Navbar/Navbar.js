@@ -158,7 +158,7 @@ const Navbar = () => {
               </svg>
             </button>
             {isMenuOpen && (
-              <div className="absolute top-0 left-0 w-full z-10">
+              <div className="absolute top-0 left-0 w-full z-10 text-start px-16">
                 <div className="p-5 bg-white border rounded shadow-sm ">
                   <div className="flex items-center justify-between mb-4 ">
                     <div className="z-1">
@@ -204,83 +204,83 @@ const Navbar = () => {
                       </button>
                     </div>
                   </div>
-                  <nav>
+                  <nav className="">
                     <ul className="space-y-4">
-                      <li>
+                      <li className="bg-deep-purple-accent-400 px-4 py-2 rounded-md">
                         <Link
                           to="/"
                           aria-label="Home"
                           title="Home"
-                          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                          className="font-medium flex tracking-wide text-white transition-colors duration-200"
                         >
                           Home
                         </Link>
                       </li>
-                      <li>
+                      <li className="bg-deep-purple-accent-400 px-4 py-2 rounded-md">
                         <Link
                           to="/services"
                           aria-label="Services"
                           title="Services"
-                          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                          className="font-medium flex tracking-wide text-white transition-colors duration-200"
                         >
                           Services
                         </Link>
                       </li>
                       {user && (
                         <>
-                          <li>
+                          <li className="bg-deep-purple-accent-400 px-4 py-2 rounded-md">
                             <Link
                               to="/myreviews"
                               aria-label="My Reviews"
                               title="My Reviews"
-                              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                              className="font-medium flex tracking-wide text-white transition-colors duration-200 "
                             >
                               My Reviews
                             </Link>
                           </li>
-                          <li>
+                          <li className="bg-deep-purple-accent-400 px-4 py-2 rounded-md">
                             <Link
                               to="/addservices"
                               aria-label="Add Services"
                               title="Add Services"
-                              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                              className="font-medium flex tracking-wide text-white transition-colors duration-200 "
                             >
                               Add Services
                             </Link>
                           </li>
                         </>
                       )}
-                      <li>
+                      <li className="bg-deep-purple-accent-400  px-4 py-2 rounded-md ">
                         <Link
                           to="/blogs"
                           aria-label="Blogs"
                           title="Blogs"
-                          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                          className="font-medium flex tracking-wide text-white transition-colors duration-200 "
                         >
                           Blogs
                         </Link>
                       </li>
-                      {user?.email ? (
-                        <ul className="flex items-center hidden space-x-8 lg:flex">
-                          <li>
+                      {user?.uid ? (
+                        <li>
+                          <Link>
                             <button
                               onClick={handleLogout}
-                              className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                              className="py-2 px-4 w-full text-start font-medium tracking-wide text-deep-purple-accent-400 transition duration-200 rounded shadow-md border-2 focus:shadow-outline focus:outline-none"
                               aria-label="Logout"
                               title="Logout"
                             >
                               Logout
                             </button>
-                          </li>
-                        </ul>
+                          </Link>
+                        </li>
                       ) : (
                         <ul className="space-y-4">
                           <li>
                             <Link
                               to="/login"
+                              className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                               aria-label="Sign in"
                               title="Sign in"
-                              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                             >
                               Sign in
                             </Link>
