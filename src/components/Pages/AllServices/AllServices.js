@@ -8,7 +8,7 @@ const AllServices = () => {
   const [services, setServices] = useState(null);
   useTitle("Services");
   useEffect(() => {
-    fetch("http://localhost:5000/services/all")
+    fetch("http://localhost:5000/allservices")
       .then((res) => res.json())
       .then((data) => setServices(data.data));
   }, []);

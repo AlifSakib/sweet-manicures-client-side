@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import heroImg from "../../assets/hero.webp";
 
 const Header = () => {
@@ -10,37 +11,36 @@ const Header = () => {
             <div className="max-w-xl mb-6">
               <div>
                 <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
-                  New Colaboration
+                  Sweet Manicures
                 </p>
               </div>
               <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
-                The quick, brown fox
+                Everything has beauty
                 <br className="hidden md:block" />
-                jumps over{" "}
+                but not everyone{" "}
                 <span className="inline-block text-deep-purple-accent-400">
-                  a lazy dog
+                  sees it.
                 </span>
               </h2>
               <p className="text-base text-gray-700 md:text-lg">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                quae. explicabo.
+                Apparently we had reached a great height in the atmosphere, for
+                the sky was a dead black, and the stars had ceased to twinkle.
               </p>
             </div>
             <div className="flex flex-col items-center md:flex-row">
-              <a
-                href="/"
+              <Link
+                to="#"
                 className="inline-flex items-center justify-center w-full h-12 px-6 mb-3 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto md:mr-4 md:mb-0 bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
               >
-                Apply Now
-              </a>
-              <a
-                href="/"
+                Take Appoinment
+              </Link>
+              <Link
+                to="#"
                 aria-label=""
                 className="inline-flex items-center font-semibold text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-700"
               >
-                Learn more
-              </a>
+                Explore More
+              </Link>
             </div>
           </div>
         </div>

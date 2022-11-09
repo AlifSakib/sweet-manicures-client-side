@@ -1,6 +1,7 @@
 import React from "react";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
+import { Link } from "react-router-dom";
 import aboutImg from "../../assets/about.jpg";
 
 const AboutMe = () => {
@@ -36,14 +37,13 @@ const AboutMe = () => {
               </div>
               <div className="flex-grow">
                 <h2 className="text-gray-900 text-lg title-font font-medium mb-3">
-                  Shooting Stars
+                  Motivation
                 </h2>
                 <p className="leading-relaxed text-base">
-                  Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-                  taxidermy. Gastropub indxgo juice poutine.
+                  Proven work experience as a Beauty Specialist,
                 </p>
-                <a
-                  href="/"
+                <Link
+                  to="#"
                   className="mt-3 text-indigo-500 inline-flex items-center"
                 >
                   Learn More
@@ -58,7 +58,7 @@ const AboutMe = () => {
                   >
                     <path d="M5 12h14M12 5l7 7-7 7"></path>
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
             <div className="flex flex-col mb-10 lg:items-start items-center">
@@ -82,11 +82,11 @@ const AboutMe = () => {
                   The Catalyzer
                 </h2>
                 <p className="leading-relaxed text-base">
-                  Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-                  taxidermy. Gastropub indxgo juice poutine.
+                  Recommending the most suitable skin care products (creams,
+                  lotions and serums)
                 </p>
-                <a
-                  href="/"
+                <Link
+                  to="#"
                   className="mt-3 text-indigo-500 inline-flex items-center"
                 >
                   Learn More
@@ -101,7 +101,7 @@ const AboutMe = () => {
                   >
                     <path d="M5 12h14M12 5l7 7-7 7"></path>
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
             <div className="flex flex-col mb-10 lg:items-start items-center">
@@ -121,14 +121,14 @@ const AboutMe = () => {
               </div>
               <div className="flex-grow">
                 <h2 className="text-gray-900 text-lg title-font font-medium mb-3">
-                  Neptune
+                  About Me
                 </h2>
                 <p className="leading-relaxed text-base">
-                  Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-                  taxidermy. Gastropub indxgo juice poutine.
+                  I am a beauty specialist expert and have proper knowledge in
+                  makeup, cosmetics, and other beauty and skin care products.
                 </p>
-                <a
-                  href="/"
+                <Link
+                  to="#"
                   className="mt-3 text-indigo-500 inline-flex items-center"
                 >
                   Learn More
@@ -143,7 +143,7 @@ const AboutMe = () => {
                   >
                     <path d="M5 12h14M12 5l7 7-7 7"></path>
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
