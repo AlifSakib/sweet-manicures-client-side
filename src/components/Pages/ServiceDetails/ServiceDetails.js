@@ -22,7 +22,8 @@ const ServiceDetails = () => {
 
     const form = e.target;
     const reviewDetails = {
-      name: `${form.firstName.value} ${form.lastName.value}`,
+      // name: `${form.firstName.value} ${form.lastName.value}`,
+      name: user.displayName,
       email: form.email.value,
       message: form.message.value,
       service_id,
@@ -168,7 +169,7 @@ const ServiceDetails = () => {
                         htmlFor="firstName"
                         className="inline-block mb-1 font-medium"
                       >
-                        First name
+                        Name
                       </label>
                       <input
                         placeholder="John"
@@ -177,9 +178,10 @@ const ServiceDetails = () => {
                         className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
                         id="firstName"
                         name="firstName"
+                        defaultValue={user.displayName}
                       />
                     </div>
-                    <div className="mb-1 sm:mb-2">
+                    {/* <div className="mb-1 sm:mb-2">
                       <label
                         htmlFor="lastName"
                         className="inline-block mb-1 font-medium"
@@ -194,7 +196,7 @@ const ServiceDetails = () => {
                         id="lastName"
                         name="lastName"
                       />
-                    </div>
+                    </div> */}
                     <div className="mb-1 sm:mb-2">
                       <label
                         htmlFor="email"
