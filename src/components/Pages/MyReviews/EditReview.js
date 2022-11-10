@@ -26,9 +26,9 @@ const EditReview = () => {
       .then((data) => {
         if (data.success) {
           toast.success("Review Updated");
-          setTimeout(() => {
-            navigate("/myreviews");
-          }, 1500);
+          // setTimeout(() => {
+          //   navigate("/myreviews");
+          // }, 1500);
         } else {
           toast.error("Review Update Failed");
         }

@@ -140,10 +140,10 @@ const AddServices = () => {
                       htmlFor="email"
                       className="inline-block mb-1 font-medium"
                     >
-                      Image
+                      Image Url
                     </label>
                     <input
-                      placeholder="john.doe@example.org"
+                      placeholder="http://image.jpg"
                       required
                       type="text"
                       className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
@@ -159,7 +159,7 @@ const AddServices = () => {
                       Price
                     </label>
                     <input
-                      placeholder="john.doe@example.org"
+                      placeholder="20.00"
                       required
                       type="text"
                       className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
@@ -175,7 +175,7 @@ const AddServices = () => {
                       Description
                     </label>
                     <textarea
-                      placeholder="Type your text here ."
+                      placeholder="Service Description."
                       required
                       type="text"
                       className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"

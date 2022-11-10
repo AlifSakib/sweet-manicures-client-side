@@ -126,7 +126,7 @@ const Register = () => {
                 htmlFor="username"
                 className="block text-sm text-gray-800 dark:text-gray-200 text-start"
               >
-                Image
+                Image Url
               </label>
               <input
                 type="text"

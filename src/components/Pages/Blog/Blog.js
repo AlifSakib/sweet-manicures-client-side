@@ -21,7 +21,7 @@ const Blog = () => {
             </Link>
             <div className="py-5 text-start">
               <p className="mb-2 text-xs font-semibold text-gray-600 uppercase">
-                13 Jul 2020
+                13 Oct 2022
               </p>
               <Link
                 to="#"
@@ -223,7 +223,7 @@ const Blog = () => {
             </Link>
             <div className="py-5 text-start">
               <p className="mb-2 text-xs font-semibold text-gray-600 uppercase">
-                28 Dec 2020
+                28 Aug 2022
               </p>
               <a
                 href="/"
@@ -326,7 +326,7 @@ const Blog = () => {
             </Link>
             <div className="py-5 text-start">
               <p className="mb-2 text-xs font-semibold text-gray-600 uppercase">
-                28 Dec 2020
+                28 July 2022
               </p>
               <Link
                 to="#"
