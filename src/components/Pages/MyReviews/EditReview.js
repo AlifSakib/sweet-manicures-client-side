@@ -102,6 +102,7 @@ const EditReview = () => {
                 id="passwordConfirmation"
                 type="text"
                 name="message"
+                defaultValue={review.message}
                 required
               />
             </div>
