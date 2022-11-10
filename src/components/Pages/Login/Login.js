@@ -45,7 +45,7 @@ const Login = () => {
       .catch((error) => {
         // const errorCode = error.code;
         const errorMessage = error.message;
-        toast.error(errorMessage);
+        toast.error("Please Provide Correct Informations");
       });
   };
 
@@ -75,7 +75,7 @@ const Login = () => {
       .catch((error) => {
         // const errorCode = error.code;
         const errorMessage = error.message;
-        toast.error(errorMessage);
+        toast.error("Please use a valid Email");
       });
   };
   return (
