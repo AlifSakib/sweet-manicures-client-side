@@ -10,7 +10,7 @@ const AddServices = () => {
   const [count, setCount] = useState([]);
   useTitle("Add Services");
   useEffect(() => {
-    fetch("https://sweet-manicures.vercel.app/services/all")
+    fetch("https://sweet-manicures.vercel.app/allservices")
       .then((res) => res.json())
       .then((data) => setCount(data.count));
   }, []);

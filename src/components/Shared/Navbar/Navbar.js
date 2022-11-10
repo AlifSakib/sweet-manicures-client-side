@@ -158,7 +158,7 @@ const Navbar = () => {
               </svg>
             </button>
             {isMenuOpen && (
-              <div className="absolute top-0 left-0 w-full z-10 text-start px-16">
+              <div className="absolute top-0 left-0 w-full z-10 text-start">
                 <div className="p-5 bg-white border rounded shadow-sm ">
                   <div className="flex items-center justify-between mb-4 ">
                     <div className="z-1">
@@ -275,24 +275,28 @@ const Navbar = () => {
                         </li>
                       ) : (
                         <ul className="space-y-4">
-                          <li>
-                            <Link
-                              to="/login"
-                              className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                              aria-label="Sign in"
-                              title="Sign in"
-                            >
-                              Sign in
+                          <li className="mb-4">
+                            <Link to="/login">
+                              <button
+                                onClick={handleLogout}
+                                className="py-2 px-4 w-full text-start font-medium tracking-wide text-deep-purple-accent-400 transition duration-200 rounded shadow-md border-2 focus:shadow-outline focus:outline-none"
+                                aria-label="Sign in"
+                                title="Sign in"
+                              >
+                                Sign in
+                              </button>
                             </Link>
                           </li>
                           <li>
-                            <Link
-                              to="/register"
-                              className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                              aria-label="Sign up"
-                              title="Sign up"
-                            >
-                              Sign up
+                            <Link to="/register">
+                              <button
+                                onClick={handleLogout}
+                                className="py-2 px-4 w-full text-start font-medium tracking-wide text-deep-purple-accent-400 transition duration-200 rounded shadow-md border-2 focus:shadow-outline focus:outline-none"
+                                aria-label="Sign up"
+                                title="Sign up"
+                              >
+                                Sign up
+                              </button>
                             </Link>
                           </li>
                         </ul>
