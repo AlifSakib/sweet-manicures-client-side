@@ -2,6 +2,8 @@
 
 # Live Site : https://dlux-inc.web.app/
 
+## Server : https://sweet-manicures.vercel.app/
+
 ![Screenshot from 2022-11-07 14-57-00](https://i.ibb.co/zFtwkYf/Sweet-Menicure.png)
 
 ### Features
