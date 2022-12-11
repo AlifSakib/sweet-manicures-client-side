@@ -6,6 +6,10 @@
 
 ![Screenshot from 2022-11-07 14-57-00](https://i.ibb.co/zFtwkYf/Sweet-Menicure.png)
 
+### Description
+
+In this project i used React, Node, MongoDb ,Express, Tailwind , Firebase Authentication , Jwt Authorization. I handled user login/reginstration with firebase authentication , Handled sort service data by decsending order , handle services review post i a decending order by posting time . Used MongoDb Crud Operation. As well as i added react-photo-viewer so if someone click any picture can view the full size image .
+
 ### Features
 
 - Jwt Authorization
